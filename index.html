@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청년안방3</title>
+    <!-- 노토산스 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://kit.fontawesome.com/077b7a1ce0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <header>
+                <div class="head_inner">
+                    <div class="head_top">
+                        <a href="https://anbang.daegu.go.kr/">대구안방</a>
+                        <div class="login">
+                            <ul class="head_join">
+                                <li><a href="https://anbang.daegu.go.kr/join/login.do">
+                                    <span class="util_login">로그인</span>
+                                </a></li>
+                                <li><a href="https://anbang.daegu.go.kr/join/signup01.do">
+                                    <span class="util_join">회원가입</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="head_btm">
+                        <nav>
+                            <ul class="menu">
+                                <li class="depth1"><a href="#">주거정책 소개</a></li>
+                                <li class="depth1"><a href="#">부동산 상담</a></li>
+                                <li class="depth1"><a href="#">지원사업 신청</a></li>
+                                <li class="depth1"><a href="#">알림 및 소통</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <!-- //header -->
+            <!-- popup -->
+            <div class="popup_holder">
+                <div class="layerPopup" id="popup1" onmousedown="startDrag(event,this)" style="top:155px; left: 10px;">
+                    <div class="layerPopcont">
+                        <img src="images/popup231010_1.jpg" alt="팝업1">
+                    </div>
+                    <div class="layerP_bottom" style="overflow: hidden;">
+                        <span class="fl">
+                            <input type="checkbox" id="popup1_chkhide" onclick="removePopup('#popup1,true')" value="checkbox">
+                            <label for="popup1_chkhide">오늘하루보지않기</label>
+                        </span>
+                        <button class="layerP_close" onclick="removePopup('#popup1,false')" style="cursor: pointer;">
+                            <i class="fas fa-times"></i>
+                            <span class="blind">닫기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="layerPopup" id="popup2" onmousedown="startDrag(event,this)" style="top: 155px; left: 420px;">
+                    <div class="layerPopcont">
+                        <a href="javascript:alert('공지 등록 예정입니다.')">
+                            <img src="images/popup231010_2.jpg" alt="팝업2">
+                        </a>
+                    </div>
+                    <div class="layerP_bottom" style="overflow: hidden;">
+                        <span class="fl">
+                            <input type="checkbox" id="popup2_chkhide" onclick="removePopup('#popup2,true')" value="checkbox">
+                            <label for="popup2_chkhide">오늘하루보지않기</label>
+                        </span>
+                        <button class="layerP_close" onclick="removePopup('#popup2,false')">
+                            <i class="fas fa-times"></i>
+                            <span class="blind">닫기</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- //popup -->
+            <main>
+                <div class="main_inner">
+                    <div class="main_left">
+                        <section class="m_con_top">
+                            <div class="box_top">
+                                <h1><b>부동산 상담</b> 서비스</h1>
+                                <ul class="bds">
+                                    <li><a href="https://anbang.daegu.go.kr/intro/estate/trade#purchase"><span>부동산정보</span></a>
+                                        </li>
+                                    <li><a href="https://anbang.daegu.go.kr/intro/subscr#apt"><span>청약정보안내</span></a>
+                                        </li>
+                                    <li><a href="https://anbang.daegu.go.kr/board/realPropertyQna?p=1&cFaq=81"><span>부동산상담</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="box_bot">
+                                <div class="service_go"><a href="https://anbang.daegu.go.kr/myService">
+                                    <h1><b>My맞춤형</b>서비스</h1>
+                                <p>연령,대상,분야,소득에 맞는</p>
+                                <p>서비스를 빠르게 검색합니다</p>
+                                <p class="go01">서비스 바로가기</p>
+                                <span class="boy"></span>
+                                </a>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="mcon_bottom">
+                            <div class="mcon_botwrap">
+                                <div class="mcon_bot_reference">
+                                    <h3 class="tle_h3">자료실</h3>
+                                    <div class="board__content">
+                                        <ul id="boardData">
+                                            <li class="board__item">
+                                                <a href="https://anbang.daegu.go.kr/board/data/1083" class="board__link">
+                                                    <strong class="board__item--title">[서식] 청년 전세 보증금 반환보증료 지원 제출서류</strong>
+                                                    <div class="board__item--content">
+                                                        <p>1. 서약서(청년 전세보증금 반환보증료 지원)</p>
+                                                        <p>&nbsp;▶ 대상자 : 전세보증금 반환보증료 지원대상자 전체 제출</p>
+                                                        <p>2. 전세보증금 반환보증료 신청서</p>
+                                                        <p>&nbsp;▶ 오프라인 신청자 (가급적 청년安방을 통해 신청해 주시기 바랍니다.)</p>
+                                                        <p>&nbsp;&nbsp;</p>
+                                                    </div>
+                                                    <div class="board__item--date">
+                                                        <span>2023.07.
+                                                            <i>24</i>
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="board__item">
+                                                <a href="https://anbang.daegu.go.kr/board/data/853" class="board__link">
+                                                    <strong class="board__item--title">[서식] 대출사실 확인서</strong>
+                                                    <div class="board__item--content">
+                                                        <p>
+                                                            <span style="font-size: 10pt;">청년전용 버팀목 전세자금 대출이자 지원사업 신청 시 필요한 증빙서류입니다.</span>
+                                                        </p>
+                                                        <p>&nbsp;</p>
+                                                        <p><span style="font-size: 10pt;">해당양식을 출력하셔서 대출을 실행한 은행의 해당지점에 방문하셔서</span></p>
+                                                        <p><span style="font-size: 10pt;">은행의 대출사실을 확인(직인 날인 등) 받은 후 신청 시 같이 업로드 해주시면 됩니다.</span></p>
+                                                        <p><span style="font-size: 10pt;">
+                                                        <u>
+                                                            <b>대출실행 지점(영업점) 외 다른 지점(영업점)의 확인이 된 대출사실확인서는 사용이 불가</b>
+                                                        </u>"하오니 유의해주세요."
+                                                        </span>
+                                                        </p>
+                                                        <p>&nbsp;</p>
+                                                        <p>
+                                                            <span style="font-size: 10pt;">
+                                                            "&nbsp;예) 대출실행 은행 및 지점(영업점) '대구은행 산격지점' -> 대출사실확인 '대구은행 중앙로지점' "
+                                                            <span style="color: rgb(58, 50, 195);">(사용불가)</span>
+                                                        </span>
+                                                        </p>
+                                                        <p>&nbsp;</p>
+                                                        <p>
+                                                            <span style="font-size: 10pt;">현재 개인정보 방화정책으로 PDF파일은 업로드가 안되니 번거로우시겠지만</span>
+                                                        </p>
+                                                        <p>
+                                                            <span style="font-size: 10pt;">jpg, png 등의 파일로 변환하셔서 업로드 부탁드리겠습니다.</span>
+                                                        </p>
+                                                        <p>&nbsp;</p>
+                                                        <p>
+                                                            <span style="font-size: 10pt;">감사합니다.</span>
+                                                        </p>
+                                                        <p>&nbsp;</p>
+                                                        <p>&nbsp;</p>
+                                                    </div>
+                                                    <div class="board__item--date">
+                                                        <span>
+                                                            2023.06.
+                                                            <i>01</i>
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <a href="https://anbang.daegu.go.kr/board/data?p=1" class="board_more">더보기
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="mcont_bottom_notice">
+                                    <h3 class="tle_h3">공지사항</h3>
+                                    <div class="board__content">
+                                        <ul id="boardNotice">
+                                            <li class="board__item">
+                                                <a href="https://anbang.daegu.go.kr/board/notice/1238" class="board__link"><strong class="board__item--title">2023년 버팀목 신혼부부 전세자금 대출이자 지원 계획 공고</strong>
+                                                <div class="board__item--content">
+                                                    <p>2023년 버팀목 신혼부부 전세자금 대출이자 지원계획 공고문입니다.&nbsp;</p>
+                                                    <P>참고하시기 바랍니다.&nbsp;</P>
+                                                </div>
+                                                <div class="board__item--date">
+                                                    <span>2023.08.
+                                                    <i>29</i>
+                                                    </span>
+                                                </div>
+                                                </a>
+                                            </li>
+                                            <li class="board__item">
+                                                <a href="https://anbang.daegu.go.kr/board/notice/1237" class="board__link">
+                                                    <strong class="board__item--title">대출사실확인서(양식) 버팀목 신혼부부 전세자금 대출이자 지원사업</strong>
+                                                    <div class="board__item--content">
+                                                        <p>버팀목 신혼부부 전세자금 대출이자 지원사업
+                                                            &nbsp;대출사실확인서(양식)입니다.&nbsp;</p>
+                                                        <p>파일을 다운받으신 후 대출은행(해당지점)에 가서 확인 받으신 후 지원신청하여 주시기 바랍니다.&nbsp;</p>
+                                                        <p>주의) 은행담당자 전화번호가 대표번호일 경우 반드시 내선번호까지 표기하여 주시기 바랍니다.&nbsp;</p>
+                                                    </div>
+                                                    <div class="board__item--date">
+                                                        <span>
+                                                            2023.08.
+                                                            <i>29</i>
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="board__item">
+                                                <a href="https://anbang.daegu.go.kr/board/notice/1182" class="board__link">
+                                                    <strong class="board__item--content">「2023년도 청년 전세보증금 반환보증료 지원사업」 대상자 모집 변경 공고</strong>
+                                                    <div class="board__item--content">
+                                                        <p>「2023년도 청년 전세보증금 반환보증료 지원사업」 대상자 모집 변경 공고합니다.&nbsp;</p>
+                                                        <p>&nbsp;</p>
+                                                        <p>상세내용은 첨부파일을 확인해주시기 바랍니다.</p>
+                                                    </div>
+                                                    <div class="board__item--date">
+                                                        <span>
+                                                            2023.08.
+                                                            <i>10</i>
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <a href="https://anbang.daegu.go.kr/board/notice" class="board_more">더보기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="main_right">
+                        <div class="mcont_right_wrap">
+                            <section class="mcont_right_top">
+                                <div class="mcont_top_visual">
+                                    <div>
+                                        <div class="visual_txt">
+                                            <h3>
+                                                <span>대구시 주거정책을 한눈에!</span>
+                                                <b>주거종합포털 대구안방</b>
+                                            </h3>
+                                            <p>경기 침체와 주택 가격 상승에 따라 대구 청년·신혼부부에게
+                                                <br>
+                                                '주거 부담'을 덜어드립니다!
+                                            </p>
+                                        </div>
+                                        <div class="mV_img">
+                                            <span class="mVi1"></span>
+                                            <span class="mVi2"></span>
+                                            <span class="mVi3"></span>
+                                        </div>
+                                        <div class="visual_slider">
+                                            <div class="swiper vbox_slider">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide" style="width: 320.333px; margin-right: 12px;">
+                                                        <a href="http://anbang.daegu.go.kr/jeonseMonthly/buildHouseOverView.do">
+                                                        <div class="face front">
+                                                            <span class="label">청년</span>
+                                                            <h4>청년 전월세
+                                                                <b>
+                                                                    임차보증금
+                                                                    <br>
+                                                                    대출이자 지원
+                                                                </b>
+                                                            </h4>
+                                                            <p>만 19~39세 이하 무주택 청년</p>
+                                                            <div>
+                                                                <p>
+                                                                    <small>1억원 까지</small>
+                                                                    <b>최대 5%</b>
+                                                                    이자지원
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="face back">
+                                                            <div class="inner">
+                                                                <h4>
+                                                                    <span>청년</span>
+                                                                    청년 전월세
+                                                                    <b>
+                                                                        임차보증금
+                                                                        <br>
+                                                                        대출이자 지원
+                                                                    </b>
+                                                                </h4>
+                                                                <p class="go">자세히보기</p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    </div>
+                                                    <div class="swiper-slide" style="width: 320.333px; margin-right: 12px;">
+                                                    <a href="http://anbang.daegu.go.kr/youthBeotim/businessOverView.do">
+                                                        <div class="face front">
+                                                            <span class="label">청년</span>
+                                                            <h4>청년전용 버팀목
+                                                                <b>
+                                                                    전세자금
+                                                                    <br>
+                                                                    대출이자 지원
+                                                                </b>
+                                                            </h4>
+                                                            <p>「주택도시기금 청년전용 버팀목 전세자금」 이용자</p>
+                                                            <div>
+                                                                <p>
+                                                                    <small>&nbsp;</small>
+                                                                    대출금리의
+                                                                    <b>1/2지원</b>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="face back">
+                                                            <div class="inner">
+                                                                <h4>
+                                                                    <span>청년</span>
+                                                                    청년전용 버팀목
+                                                                    <b>전세자금
+                                                                    <br>
+                                                                    대출이자 지원
+                                                                    </b>    
+                                                                </h4>
+                                                                <p class="go">자세히보기</p>
+                                                            </div>
+                                                        </div>
+                                                    </a></div>
+                                                    <div class="swiper-slide" style="width: 320.333px; margin-right: 12px;">
+                                                        <a href="http://anbang.daegu.go.kr/hopeHousing/businessOverView.do">
+                                                            <div class="face front">
+                                                                <span class="label">청년</span>
+                                                                <h4>청년 희망주택
+                                                                    <b>
+                                                                        대출이자
+                                                                        <br>
+                                                                        지원
+                                                                    </b>
+                                                                </h4>
+                                                                <p>
+                                                                    대구형 청년희망주택의 청년계층 입주자 중
+                                                                    <br>
+                                                                    전세자금 대출자
+                                                                </p>
+                                                                <p>
+                                                                    <small>표준임대보증금 범위내</small>
+                                                                    <b>대출이자 50%</b>
+                                                                    지원
+                                                                </p>
+                                                            </div>
+                                                            <div class="face back">
+                                                                <div class="inner">
+                                                                    <h4>
+                                                                        <span>청년</span>
+                                                                        청년 희망주택
+                                                                        <b>
+                                                                            대출이자
+                                                                            <br>
+                                                                            지원
+                                                                        </b>
+                                                                    </h4>
+                                                                    <p class="go">자세히보기</p>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide" style="width: 320.333px; margin-right: 12px;">
+                                                        <a href="http://anbang.daegu.go.kr/supportNewlyweds/businessOverView.do">
+                                                            <div class="face front">
+                                                                <span class="label">신혼</span>
+                                                                <h4>버팀목 신혼부부 전용
+                                                                    <br>
+                                                                    전세자금
+                                                                    <b>대출이자 지원</b>
+                                                                </h4>
+                                                                <p>2020.1.1. 이후 「주택도시기금 신혼부부 전용 전세자금」 을 이용중인 신혼부부</p>
+                                                                <p>
+                                                                    <small>※자녀 수에 따라 차등 지원</small>
+                                                                    최대
+                                                                    <b>1.6%까지</b>
+                                                                    지원
+                                                                </p>
+                                                            </div>
+                                                            <div class="face back">
+                                                                <div class="inner">
+                                                                    <h4>
+                                                                        <span>신혼</span>
+                                                                        버팀목 신혼부부 전용
+                                                                        <br>
+                                                                        전세자금
+                                                                        <b>대출이자 지원</b>
+                                                                    </h4>
+                                                                    <p class="go">자세히보기</p>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper_button_wrap">
+                                                    <div class="swiper-button-next" style="position: absolute; right: 0; width: 24px; height: 24px;" role="button" aria-label="Next slide" aria-disabled="false"></div>
+                                                    <div class="swiper-button-prev"
+                                                    style="position: absolute; left: 0; width: 24px; height: 24px;" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="false"></div>
+                                                    <div class="swiper-notification" aria-live="assertive" aria-disabled="true"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="mcont_bottom">
+                                <div class="mcont_bottom_right">
+                                    <div class="service_box">
+                                        <h3 class="tle_h3">
+                                            <b>빠른 조회</b>
+                                            서비스
+                                        </h3>
+                                        <div class="swiper service_slider">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <a href="https://www.daegu.go.kr/index.do" target="_blank">
+                                                        <span class="img">
+                                                            <img src="images/banner_01.png" alt="대구광역시 홈페이지">
+                                                        </span>
+                                                        <span class="txt">
+                                                            대구광역시 홈페이지
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <a href="https://apply.lh.or.kr/lhapply/main.do" target="_blank">
+                                                        <span class="img">
+                                                            <img src="images/banner_02.png" alt="LH청약센터">
+                                                        </span>
+                                                        <span class="txt">
+                                                            LH청약센터
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <a href="https://www.dudc.or.kr/customer/supply" target="_blank">
+                                                        <span class="img">
+                                                            <img src="images/banner_03.png" alt="대구도시개발공사">
+                                                        </span>
+                                                        <span class="txt">
+                                                            대구도시개발공사
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <a href="https://www.bokjiro.go.kr/ssis-tbu/index.do" target="_blank">
+                                                        <span class="img">
+                                                            <img src="images/banner_04.png" alt="복지로">
+                                                        </span>
+                                                        <span class="txt">
+                                                            복지로
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <a href="https://www.dgjump.com/" target="_blank">
+                                                        <span class="img">
+                                                            <img src="images/banner_05.png" alt="젊프">
+                                                        </span>
+                                                        <span class="txt">
+                                                            젊프
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <a href="https://www.myhome.go.kr/" target="_blank">
+                                                        <span class="img">
+                                                            <img src="images/banner_06.png" alt="복지로">
+                                                        </span>
+                                                        <span class="txt">복지로</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                       </div>
+                                    </div>
+                                    <!-- //서비스박스 -->
+                                    <!-- 큐박스 -->
+                                    <div class="que_box">
+                                        <h3 class="tle_h3"><b>자주하는</b>질문</h3>
+                                        <div class="swiper que_slider">
+                                            <div class="swiper-queslider">
+                                                <div class="swiper-slide">
+                                                    <a href="https://anbang.daegu.go.kr/board/homeStability?nttId=1341" class="label_red">
+                                                        <span class="label">사업</span>
+                                                        <span class="tle">[이자청구] 등본(혹은 초본)에는 어떤 내용이 들어가야 하나요?</span>
+                                                    </a>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <a href="https://anbang.daegu.go.kr/board/realPropertyFaq?nttId=1439" class="label_green">
+                                                        <span class="label">부동산</span>
+                                                        <span class="tle">계약이 끝나기 전에 나가려고 하는데 어떻게 해야 하나요?</span>
+                                                    </a>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <a href="https://anbang.daegu.go.kr/board/realPropertyFaq?nttId=1313" class="label_blue">
+                                                        <span class="label">법률</span>
+                                                        <span class="tle">세입자가 파산 선고를 받은 경우는 어떻게 되나요?</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <button class="scrollTop on">
+                                <i class="fa-solid fa-arrow-up"></i>
+                                <span class="blind">페이지 상단으로 이동</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- ~~~~~~~~~~~~~~footer~~~~~~~~~~~~~~~ -->
+            <footer>
+                <div class="foot_top">
+                    <div class="footer__inner">
+                        <ul>
+                            <li>
+                                <a href="https://www.daegu.go.kr/index.do?menu_id=00050250" target="_blank">개인정보처리방침</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="foot_bot">
+                    <div class="footer__inner">
+                        <p class="foot__address">
+                            (41542) 대구광역시 북구 연암로 40 (대구광역시청 산격청사)
+                            <b>대표안내전화</b>
+                            (053)120
+                            <b>팩스</b>
+                            (053)503-2879
+                        </p>
+                        <p class="foot_copyright">&copy; DAEGU METROPOLITAN CITY ALL RIGHTS RESERVED.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- swiper -->
+    <script>
+        var swiper = new Swiper(".service_slider", {
+            slidesPerView : 4,
+            direction:'horizontal',
+            autoplay : true,
+            speed : 2000,
+        });
+        var swiper = new Swiper(".vbox_slider", {
+            slidesPerView : 3,
+            direction:'horizontal',
+            autoplay : true,
+            speed : 2000,
+            loof:true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+            
+        }, 3000);
+        var swiper = new Swiper(".que_slider", {
+            slidesPerView : 3,
+            direction:'horizontal'
+        });
+      </script>
+</body>
+</html>
